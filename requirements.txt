@@ -1,0 +1,9 @@
+pythermalcomfort
+psychrolib
+fpdf
+requests
+python-docx
+docx
+numpy
+pandas
+matplotlib
