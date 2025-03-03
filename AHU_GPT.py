@@ -2,8 +2,8 @@ import streamlit as st
 import requests
 import pandas as pd
 import pythermalcomfort
-from pythermalcomfort.models import pmv_ppd
-from pythermalcomfort.utilities import v_relative, clo_dynamic
+from pythermalcomfort.models import pmv_ppd_iso
+from pythermalcomfort.utilities import v_relative, clo_dynamic_iso
 from fpdf import FPDF
 import requests
 import psychrolib
@@ -835,8 +835,8 @@ def loop():
     # calculate relative air speed
     v_r = v_relative(v=v, met=met)
     # calculate dynamic clothing
-    clo_d = clo_dynamic(clo=clo, met=met)
-    results = pmv_ppd(tdb=zonedbt, tr=zonemrt, vr=v_r, rh=zonerh, met=met, clo=clo_d)
+    clo_d = clo_dynamic_iso(clo=clo, met=met)
+    results = pmv_ppd_iso(tdb=zonedbt, tr=zonemrt, vr=v_r, rh=zonerh, met=met, clo=clo_d)
     # print("Predicted Percentage of Dissatisfied (PPD) is "+str(results["ppd"]))
     # print("Predicted Mean Vote (PMV) is "+str(results["pmv"]))
 
