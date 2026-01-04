@@ -835,7 +835,7 @@ def loop():
     # calculate relative air speed
     v_r = v_relative(v=v, met=met)
     # calculate dynamic clothing
-    clo_d = clo_dynamic_iso(clo=clo, met=met)
+    clo_d = clo_dynamic_iso(clo=clo, met=met,v=v)
     results = pmv_ppd_iso(tdb=zonedbt, tr=zonemrt, vr=v_r, rh=zonerh, met=met, clo=clo_d)
     # print("Predicted Percentage of Dissatisfied (PPD) is "+str(results["ppd"]))
     # print("Predicted Mean Vote (PMV) is "+str(results["pmv"]))
@@ -921,3 +921,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
