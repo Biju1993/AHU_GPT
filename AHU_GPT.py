@@ -693,12 +693,13 @@ def loop():
     ax.annotate('Supply Air point', xy=(x1_component-2, y1_component-0.002))
     ax.annotate('Return Air point', xy=(x_component+2, y_component+0.002))
 
-    ax.set(ylim=(0, 0.025), xlim=(10, 40), ylabel=r"Humidity Ratio [$kg_{water}/kg_{dry air}$]", xlabel="Dry-bulb Temperature [°C]")
+    #ax.set(ylim=(0, 0.025), xlim=(10, 40), ylabel=r"Humidity Ratio [$kg_{water}/kg_{dry air}$]", xlabel="Dry-bulb Temperature [°C]")
+    ax.set(ylim=(0, 0.025), xlim=(10, 40), ylabel="Humidity Ratio", xlabel="Dry bulb Temperature")
     ax.yaxis.tick_right()
     ax.yaxis.set_label_position("right")
     plt.title('Plotting onsite parameters in Pychrometric chart')
-    #plt.tight_layout()
-    fig, ax = plt.subplots(constrained_layout=True)
+    plt.tight_layout()
+    # fig, ax = plt.subplots(constrained_layout=True)
 
     plt.savefig('table.png')
 
@@ -922,5 +923,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
