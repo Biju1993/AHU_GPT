@@ -697,7 +697,8 @@ def loop():
     ax.yaxis.tick_right()
     ax.yaxis.set_label_position("right")
     plt.title('Plotting onsite parameters in Pychrometric chart')
-    plt.tight_layout()
+    #plt.tight_layout()
+    fig, ax = plt.subplots(constrained_layout=True)
 
     plt.savefig('table.png')
 
@@ -921,4 +922,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
